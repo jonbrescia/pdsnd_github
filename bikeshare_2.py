@@ -107,22 +107,11 @@ def get_filters():
         foo = input('Day of the Week:  ')
 
         # Check input
-        if foo.lower() in ['sunday', 'sun', 'su']:
-            day  = 'sunday'
-        elif foo.lower() in ['monday', 'mon', 'mo']:
-            day = 'monday'
-        elif foo.lower() in ['tuesday', 'tue', 'tu']:
-            day = 'tuesday'
-        elif foo.lower() in ['wednesday', 'wed', 'we']:
-            day = 'wednesday'
-        elif foo.lower() in ['thursday', 'thu', 'th']:
-            day = 'thursday'
-        elif foo.lower() in ['friday', 'fri', 'fr']:
-            day = 'friday'
-        elif foo.lower() in ['saturday', 'sat', 'sa']:
-            day = 'saturday'
-        elif foo.lower() in ['none', 'all', 'no', 'n']:
+        result = [v for v in DAY_DATA if foo.lower() in v]
+        if foo.lower() in ['none', 'all', 'no', 'n']:
             day = 'all'
+        elif len(result) == 1:
+            day = result[0]
         else:
             print('\nInvailid Input. Please try again:\n')
 
