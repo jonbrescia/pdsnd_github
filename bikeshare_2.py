@@ -281,15 +281,19 @@ def user_stats(df, city):
 
 def show_raw(df):
     """Display raw data if prompted by the user"""
+    # Starting line of raw data to be displayed
     index = 0
+    # number of data entries to show at a time
     step = 5
     while True:
+        # fetch and check user input
         foo = input('\nWould you like to see the raw data? (y/n)\n')
         if foo.lower() in ['n', 'no', 'nope']:
             return
         elif foo.lower() in ['y', 'yes', 'please']:
             data_flag = False
             while True:
+                # Set flag to finish showing data if we run out
                 if index < len(df) - step:
                     d = step
                 else:
@@ -300,11 +304,13 @@ def show_raw(df):
                 index += step
 
                 if data_flag:
+                    # end condition
                     print('\nEnd of dataframe reached.\n')
                     return
                 else:
                     next_flag = False
                     while not next_flag:
+                        # fetch and check user input
                         bar = input('\nDisplay next set of rows? (y/n)\n')
                         if bar.lower() in ['y', 'yes', 'please']:
                             next_flag = True
@@ -327,7 +333,7 @@ def main():
 
     Necessary additional files:
         washington.csv
-        chicago.csv 
+        chicago.csv
         new_york_city.csv
     """
 
