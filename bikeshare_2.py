@@ -87,34 +87,17 @@ def get_filters():
         month_error = '\nThis data set only has records from January to June.\nPlease make another selection.\n'
 
         # Check input
-        if foo.lower() in ['january', 'jan']:
-            month  = 'january'
-        elif foo.lower() in ['february', 'feb']:
-            month = 'february'
-        elif foo.lower() in ['march', 'mar']:
-            month = 'march'
-        elif foo.lower() in ['april', 'apr']:
-            month = 'april'
-        elif foo.lower() in ['may']:
-            month = 'may'
-        elif foo.lower() in ['june', 'jun']:
-            month = 'june'
-        elif foo.lower() in ['july', 'jul']:
-            print(month_error)
-        elif foo.lower() in ['august', 'aug']:
-            print(month_error)
-        elif foo.lower() in ['september', 'sep']:
-            print(month_error)
-        elif foo.lower() in ['october', 'oct']:
-            print(month_error)
-        elif foo.lower() in ['november', 'nov']:
-            print(month_error)
-        elif foo.lower() in ['december', 'dec']:
-            print(month_error)
-        elif foo.lower() in ['none', 'all', 'no', 'n']:
+        result = [v for v in MONTH_DATA if foo.lower() in v]
+        if foo.lower() in ['none', 'all', 'no', 'n']:
             month = 'all'
+        elif len(result) == 1:
+            if MONTH_DATA[result[0]] < 7:
+                month = result[0]
+            else:
+                print(month_error)
         else:
             print('\nInvailid Input. Please try again:\n')
+
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
     day = None
