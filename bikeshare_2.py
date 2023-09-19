@@ -317,6 +317,20 @@ def show_raw(df):
 
 
 def main():
+    """
+    Script that summarizes bikeshare data collected for certain cities
+    Only one city's data can be summarized at a time
+    Data can be filitered to examine a particular month or day of the week
+
+    No inputs required
+    All outputs posted to command line
+
+    Necessary additional files:
+        washington.csv
+        chicago.csv 
+        new_york_city.csv
+    """
+
     end_flag = False
     while not end_flag:
         city, month, day = get_filters()
