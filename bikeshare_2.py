@@ -32,15 +32,19 @@ def time_string(x):
 
     # Pick units based on value of x
     if x < 60:
+        # less than 1 min
         return('{} seconds'.format(x))
-    elif x < 3600:
+    elif x < 60*60:
+        # less than 1 hour
         m, s = divmod(x, 60)
         return('{} minutes {} seconds'.format(m, s))
-    elif x < 86400:
+    elif x < 60*60*24:
+        # less than 1 day
         h, r = divmod(x, 3600)
         m, s = divmod(r, 60)
         return('{} hours {} minutes {} seconds'.format(h,m,s))
     else:
+        # greater than 1 day
         d, r1 = divmod(x, 86400)
         h, r2 = divmod(r1, 3600)
         m, s = divmod(r2, 60)
