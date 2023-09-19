@@ -1,17 +1,18 @@
->**Note**: Please **fork** the current Udacity repository so that you will have a **remote** repository in **your** Github account. Clone the remote repository to your local machine. Later, as a part of the project "Post your Work on Github", you will push your proposed changes to the remote repository in your Github account.
+# Bikeshare (Udacity Git project)
 
-### Date created
-Include the date you created this project and README file.
+**Date Created: 9/19/2023**
 
-### Project Title
-Replace the Project Title
+## Description
+This project includes a python script that summarizes bikeshare data collected in Washington, Chicago, and New York City.
 
-### Description
-Describe what your project is about and what it does
+## Files
+#### Script Files
+* bikeshare_2.py
 
-### Files used
-Include the files used
+#### Data Files _(Not Included)_
+* chicago.csv
+* new_york_city.csv
+* washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+Solution used for returning the first key by value in a dictionary can be found: [here](https://stackoverflow.com/questions/16588328/return-key-by-value-in-dictionary)
